@@ -9,9 +9,11 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 app.get('/movies', (req, res) => {
-res.send('soon');
+//res.send('soon');
+res.render('movies');
 
 });
+
 
 app.get('/movies/add', (req, res) => {
     res.send('page add filme');
@@ -19,7 +21,8 @@ app.get('/movies/add', (req, res) => {
 
 app.get('/movies/:id', (req, res) => {
     const id = req.params.id;
-    res.send(`film ${id}`);
+    //res.send(`film ${id}`);
+    res.render('movie-details');
 });
 
 
