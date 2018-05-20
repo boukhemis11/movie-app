@@ -26,13 +26,29 @@ app.get('/movies', (req, res) => {
 
 });
 
+/*
 app.post('/movies', (req, res) => {
   
   let newFilm = {title: req.body.movietitle, year: req.body.movieyear};
   frenchMovies.push(newFilm);
   res.sendStatus(201);
   console.log(frenchMovies);
-});
+}); */
+
+app.post('/movies',upload.fields([]) ,(req, res) => {
+  if(!req.body){
+      return res.sendStatus(500);
+  }else {
+      const formData = req.body;
+      console.log(formData);
+      const newMovie = {title: req.body.movietitle, year: req.body.movieyear};
+      frenchMovies.push(newMovie);
+      res.sendStatus(201);
+  }
+    
+  });
+
+  console.log(frenchMovies);
 
 app.get('/movies/add', (req, res) => {
     res.send('page add filme');
