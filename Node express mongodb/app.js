@@ -8,5 +8,5 @@ res.send('Hello Boukh')
 });
 
 app.listen(3000, () => {
-    console.log('port 3000');
+    console.log(`port ${PORT}`);
 });
