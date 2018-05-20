@@ -66,6 +66,10 @@ app.get('/', (req, res) => {
 res.render('index');
 });
 
+app.get('/movie-search', (req, res) => {
+    res.render('movie-search');
+})
+
 app.listen(3000, () => {
     console.log(`port ${PORT}`);
 });
